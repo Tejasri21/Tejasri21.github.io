@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tejasri Kopparthi — Software Engineer II, Backend Systems & Applied AI. Portfolio of agentic LLM, RAG, and secure SDLC projects with live interactive demos.">
+  <title>Tejasri Kopparthi — Backend Systems & Applied AI</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top">TK</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#demos">Demos</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <p class="hero-eyebrow">Seattle, WA</p>
+      <h1>Tejasri Kopparthi</h1>
+      <p class="hero-title">Software Engineer II — Backend Systems &amp; Applied AI</p>
+      <p class="hero-oneliner">3+ years building backend systems, distributed data pipelines (Spark/Kafka), and applied LLM projects; M.S. Computer Science, Georgia Tech.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://github.com/Tejasri21">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/tejasri-kopparthi-7483a9132">LinkedIn</a>
+        <a class="btn" href="mailto:ktejasri555@gmail.com">Email</a>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
+      <p class="section-lead">Applied AI systems and secure-engineering tooling — each one real, runnable, and tested.</p>
+      <p class="private-note">Source code is private — available on request. Try each project live below instead.</p>
+
+      <div class="project-grid">
+        <article class="card">
+          <h3>TriagePilot</h3>
+          <p class="pitch">Agentic incident triage with RAG over runbooks.</p>
+          <p>Four AI agents — a severity classifier, a log investigator, a RAG runbook retriever, and a remediation planner — triage outages end-to-end. Every step of the repair plan cites the exact runbook section it came from, and the planner refuses to guess when the evidence is thin.</p>
+          <ul class="tags" aria-label="Technologies">
+            <li>Python</li><li>FastAPI</li><li>Hybrid retrieval</li><li>Eval harness</li>
+          </ul>
+          <p class="metric"><strong>18/18</strong> tests pass · <strong>1.00</strong> retrieval recall@3 on a 10-case labeled eval</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="#demo-triagepilot">Live demo</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>CodeCompass</h3>
+          <p class="pitch">Self-corrective multi-agent RAG for codebase Q&amp;A.</p>
+          <p>Ask questions about a codebase in plain English. A planner retrieves candidate code, a critic judges whether the evidence actually answers the question and triggers a rewritten re-retrieval when it doesn't, and the synthesizer answers with file:line citations — or honestly abstains instead of hallucinating.</p>
+          <ul class="tags" aria-label="Technologies">
+            <li>Python</li><li>AST-based indexing</li><li>FastAPI</li><li>Corrective RAG</li>
+          </ul>
+          <p class="metric"><strong>14/14</strong> tests · <strong>100%</strong> answer hit-rate, citation precision, and abstention rate on a 14-case eval</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="#demo-codecompass">Live demo</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>SecureFlow</h3>
+          <p class="pitch">Ticket-to-PR secure SDLC pipeline.</p>
+          <p>A Jira-style requirement goes in and a Mermaid flow diagram comes out; then an automated security gate — secret scan, banned patterns, dependency deny-list, requirement completeness — runs on every pull request. When it finds issues, the PR fails and the full report is posted as a comment.</p>
+          <ul class="tags" aria-label="Technologies">
+            <li>Python</li><li>GitHub Actions</li><li>Mermaid</li><li>DevSecOps</li>
+          </ul>
+          <p class="metric"><strong>15/15</strong> tests pass · gate demonstrably fails PRs on planted vulnerabilities</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="#demo-secureflow">Live demo</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>A11yGuard</h3>
+          <p class="pitch">UI vulnerability &amp; accessibility remediation, before/after.</p>
+          <p>A demo storefront shipped in two versions: "before" carries 28 accessibility issues and 6 security findings, including a live XSS hole; "after" fixes all of them. Every fix is mapped to its WCAG 2.1 criterion in a remediation table, and automated checkers prove the difference in CI.</p>
+          <ul class="tags" aria-label="Technologies">
+            <li>HTML/CSS/JS</li><li>Python checkers</li><li>WCAG 2.1</li><li>GitHub Actions</li>
+          </ul>
+          <p class="metric"><strong>16/16</strong> tests · before fails / after passes both checkers</p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="#demo-a11yguard">Live demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="demos" id="demos">
+      <h2>Live demos</h2>
+      <p class="section-lead">Interactive replays of real runs — the A11yGuard demo is the actual app, embedded live.</p>
+
+      <!-- ============ TriagePilot ============ -->
+      <article class="demo" id="demo-triagepilot">
+        <h3>TriagePilot — incident triage replay</h3>
+        <p class="demo-label">Interactive replay of a real run (MockLLM, fully offline). Pick an incident, then step through the agent pipeline.</p>
+        <div class="picker" role="group" aria-label="Choose an incident">
+          <button class="btn picker-btn" data-demo="triage" data-key="kafka_lag">Kafka consumer lag</button>
+          <button class="btn picker-btn" data-demo="triage" data-key="db_failover">Postgres failover</button>
+          <button class="btn picker-btn" data-demo="triage" data-key="deploy_regression">Deploy regression</button>
+        </div>
+        <div class="replay" id="triage-replay" aria-live="polite">
+          <p class="replay-empty">Choose an incident above to start the replay.</p>
+        </div>
+        <div class="replay-controls">
+          <button class="btn" id="triage-next" disabled>Next step</button>
+          <button class="btn" id="triage-reset" disabled>Reset</button>
+        </div>
+      </article>
+
+      <!-- ============ CodeCompass ============ -->
+      <article class="demo" id="demo-codecompass">
+        <h3>CodeCompass — codebase Q&amp;A replay</h3>
+        <p class="demo-label">Interactive replay of real sessions (MockLLM, fully offline). Pick a question, then step through the corrective loop.</p>
+        <div class="picker" role="group" aria-label="Choose a question">
+          <button class="btn picker-btn" data-demo="codecompass" data-key="retry">Direct question</button>
+          <button class="btn picker-btn" data-demo="codecompass" data-key="flaky">Paraphrased question</button>
+          <button class="btn picker-btn" data-demo="codecompass" data-key="graphql">Unanswerable question</button>
+        </div>
+        <div class="replay" id="codecompass-replay" aria-live="polite">
+          <p class="replay-empty">Choose a question above to start the replay.</p>
+        </div>
+        <div class="replay-controls">
+          <button class="btn" id="codecompass-next" disabled>Next step</button>
+          <button class="btn" id="codecompass-reset" disabled>Reset</button>
+        </div>
+      </article>
+
+      <!-- ============ SecureFlow ============ -->
+      <article class="demo" id="demo-secureflow">
+        <h3>SecureFlow — pipeline walkthrough</h3>
+        <p class="demo-label">Walkthrough of a real pipeline run: requirement → generated diagram → security gate → PR comment.</p>
+        <div class="replay" id="secureflow-replay" aria-live="polite"></div>
+        <div class="replay-controls">
+          <button class="btn" id="secureflow-next">Next step</button>
+          <button class="btn" id="secureflow-reset">Reset</button>
+        </div>
+      </article>
+
+      <!-- ============ A11yGuard ============ -->
+      <article class="demo" id="demo-a11yguard">
+        <h3>A11yGuard — the actual demo app, live</h3>
+        <p class="demo-label">This is the real demo storefront, embedded. Switch tabs to compare.</p>
+        <div class="howto">
+          <h4>Things to try</h4>
+          <ol>
+            <li>In the <strong>Before</strong> tab, append <code>#&#34;&gt;&lt;img src=x onerror=alert(1)&gt;</code> to the page URL in the address bar of the frame (or <a href="demos/a11y/before/index.html" target="_blank" rel="noopener">open it in a new tab</a>) and watch the XSS fire. Try the same in the <strong>After</strong> tab — nothing happens.</li>
+            <li>Navigate both versions with <strong>keyboard only</strong> (<kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd>, <kbd>Enter</kbd>). In Before, the "buttons" aren't focusable and there's no skip link; in After, everything is reachable.</li>
+            <li>Compare contrast and labels: Before has unlabeled inputs and faint text; After fixes all of it.</li>
+          </ol>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Demo version">
+          <button class="btn tab-btn active" role="tab" aria-selected="true" data-tab="before">Before — 28 a11y issues, 6 security findings</button>
+          <button class="btn tab-btn" role="tab" aria-selected="false" data-tab="after">After — 0 issues</button>
+        </div>
+        <div class="tab-panels">
+          <iframe title="A11yGuard demo — before version (vulnerable and inaccessible)" src="demos/a11y/before/index.html" data-panel="before" loading="lazy"></iframe>
+          <iframe title="A11yGuard demo — after version (fixed)" src="demos/a11y/after/index.html" data-panel="after" loading="lazy" hidden></iframe>
+        </div>
+      </article>
+    </section>
+
+    <section class="about" id="about">
+      <h2>About</h2>
+      <p>I'm a Software Engineer II based in Seattle, WA, with 3+ years building backend systems and distributed data pipelines — including a Spark/Kafka pipeline processing millions of daily events, where I cut processing latency 4–10x. I hold an M.S. in Computer Science from Georgia Tech and have published ML research at EMNLP 2023.</p>
+      <p>Lately I've been focused on applied AI engineering: multi-agent LLM systems, retrieval-augmented generation with honest eval harnesses, and secure development practices. I'm currently targeting backend and AI-infrastructure roles where distributed systems meet production ML.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <h2>Get in touch</h2>
+    <p>Open to backend and AI-infrastructure roles in the Seattle area and beyond. Source code for these projects is private — happy to share on request.</p>
+    <ul class="contact-links">
+      <li><a href="https://github.com/Tejasri21">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/tejasri-kopparthi-7483a9132">LinkedIn</a></li>
+      <li><a href="mailto:ktejasri555@gmail.com">ktejasri555@gmail.com</a></li>
+    </ul>
+    <p class="copyright">&copy; 2026 Tejasri Kopparthi</p>
+  </footer>
+
+  <script src="demos/triage-data.js"></script>
+  <script src="demos/codecompass-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
