@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Demo Storefront</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Demo Storefront</h1>
+    <nav>
+      <div class="nav-link" onclick="location.href='#home'">Home</div>
+      <div class="nav-link" onclick="location.href='#deals'">Deals</div>
+      <div class="nav-link" onclick="location.href='#support'">Support</div>
+    </nav>
+  </header>
+
+  <div id="welcome" class="banner"></div>
+
+  <main>
+    <section class="search-row">
+      <input id="search" type="text" placeholder="Search products..." onkeyup="liveSearch(this.value)">
+    </section>
+    <div id="results" class="results"></div>
+
+    <section id="products" class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Headphones">
+        <h3>Wireless Headphones</h3>
+        <p class="price">$79.99</p>
+        <p class="desc">Noise-cancelling over-ear headphones with 30h battery.</p>
+        <div class="card-btn" onclick="addToCart('headphones')">Add to cart</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Keyboard">
+        <h3>Mechanical Keyboard</h3>
+        <p class="price">$129.99</p>
+        <p class="desc">Hot-swappable mechanical keyboard, RGB backlight.</p>
+        <div class="card-btn" onclick="addToCart('keyboard')">Add to cart</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Mouse">
+        <h3>Ergonomic Mouse</h3>
+        <p class="price">$49.99</p>
+        <p class="desc">Vertical ergonomic mouse with silent clicks.</p>
+        <div class="card-btn" onclick="addToCart('mouse')">Add to cart</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x200?text=Monitor">
+        <h3>27" 4K Monitor</h3>
+        <p class="price">$349.99</p>
+        <p class="desc">27-inch 4K IPS display, HDR400.</p>
+        <div class="card-btn" onclick="addToCart('monitor')">Add to cart</div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="newsletter">
+      <h2>Get 10% off your first order</h2>
+      <form id="signup" onsubmit="return subscribe(event)">
+        <input id="newsletter-email" type="text" placeholder="you@example.com">
+        <div class="card-btn" onclick="document.getElementById('signup').requestSubmit()">Sign up</div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Demo Storefront. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
