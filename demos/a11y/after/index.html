@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Storefront</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <h1>Demo Storefront</h1>
+    <nav aria-label="Primary">
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#deals">Deals</a>
+      <a class="nav-link" href="#support">Support</a>
+    </nav>
+  </header>
+
+  <div id="welcome" class="banner" aria-live="polite"></div>
+
+  <main id="main">
+    <section class="search-row">
+      <label for="search">Search products</label>
+      <input id="search" name="search" type="search" placeholder="e.g. headphones" autocomplete="off">
+    </section>
+    <div id="results" class="results" aria-live="polite"></div>
+
+    <section id="products" class="grid" aria-label="Products">
+      <article class="card">
+        <img src="https://via.placeholder.com/300x200?text=Headphones" alt="Black wireless over-ear headphones">
+        <h3>Wireless Headphones</h3>
+        <p class="price">$79.99</p>
+        <p class="desc">Noise-cancelling over-ear headphones with 30h battery.</p>
+        <button type="button" class="card-btn" data-id="headphones">Add to cart</button>
+      </article>
+      <article class="card">
+        <img src="https://via.placeholder.com/300x200?text=Keyboard" alt="Mechanical keyboard with RGB backlight">
+        <h3>Mechanical Keyboard</h3>
+        <p class="price">$129.99</p>
+        <p class="desc">Hot-swappable mechanical keyboard, RGB backlight.</p>
+        <button type="button" class="card-btn" data-id="keyboard">Add to cart</button>
+      </article>
+      <article class="card">
+        <img src="https://via.placeholder.com/300x200?text=Mouse" alt="Vertical ergonomic mouse">
+        <h3>Ergonomic Mouse</h3>
+        <p class="price">$49.99</p>
+        <p class="desc">Vertical ergonomic mouse with silent clicks.</p>
+        <button type="button" class="card-btn" data-id="mouse">Add to cart</button>
+      </article>
+      <article class="card">
+        <img src="https://via.placeholder.com/300x200?text=Monitor" alt="27-inch 4K monitor on a desk">
+        <h3>27" 4K Monitor</h3>
+        <p class="price">$349.99</p>
+        <p class="desc">27-inch 4K IPS display, HDR400.</p>
+        <button type="button" class="card-btn" data-id="monitor">Add to cart</button>
+      </article>
+    </section>
+
+    <section id="newsletter" class="newsletter" aria-labelledby="newsletter-heading">
+      <h2 id="newsletter-heading">Get 10% off your first order</h2>
+      <form id="signup" novalidate>
+        <label for="newsletter-email">Email address</label>
+        <input id="newsletter-email" name="email" type="email"
+               placeholder="you@example.com" aria-describedby="form-error" required>
+        <p id="form-error" class="error" aria-live="polite"></p>
+        <button type="submit" class="card-btn">Sign up</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Demo Storefront. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
